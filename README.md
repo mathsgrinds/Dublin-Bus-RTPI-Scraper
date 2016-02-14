@@ -42,13 +42,15 @@ print table
 ### Get only certain bus routes from certain bus stops in html form
 #### For example, show only the 68 and 122 from 1385, the 49 and 54a from the 2634 and finally the 9 and 16 from the 1348 stop
 <pre>
+table = ""
+
 for pairs in [[1385,["68a","68","122"]] , [2634,["49","54a"]] , [1348,["9","16","16c"]] ]:
 
     table += bus_html_table(pairs[0], pairs[1])
 
-	page =  bus_order_html_table(table)
+page =  bus_order_html_table(table)
 
-	print page
+print page
 	
 </pre>
 	
