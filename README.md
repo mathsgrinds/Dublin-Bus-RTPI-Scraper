@@ -20,6 +20,7 @@ Basically you can copy the code in main.py to your project, some examples are be
 #### For example stop 1385
 <pre>
 xml =  bus_rtpi_get_result(1385)
+
 print xml
 </pre>
 
@@ -27,6 +28,7 @@ print xml
 #### For example stop 1385
 <pre>
 table = bus_html_table(1385)
+
 print table
 </pre>
 
@@ -34,6 +36,7 @@ print table
 #### For example show the 16 bus from stop 1348
 <pre>
 table = bus_html_table(1348, ["16","16c"])
+
 print table
 </pre>
 
@@ -42,9 +45,13 @@ print table
 #### For example, show only the 68 and 122 from 1385, the 49 and 54a from the 2634 and finally the 9 and 16 from the 1348 stop
 <pre>
 for pairs in [[1385,["68a","68","122"]] , [2634,["49","54a"]] , [1348,["9","16","16c"]] ]:
+
     table += bus_html_table(pairs[0], pairs[1])
+
 	page =  bus_order_html_table(table)
-	print page`
+
+	print page
+	
 </pre>
 	
 ## Disclaimer
