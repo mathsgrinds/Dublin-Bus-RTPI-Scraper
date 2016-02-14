@@ -1,6 +1,4 @@
 # Dublin-Bus-RTPI-Scraper
-
-
 ## About
 A Python Scraper for a clean scrape of Dublin Bus RTPI times
 
@@ -9,7 +7,7 @@ A Python Scraper for a clean scrape of Dublin Bus RTPI times
 1. main.py
 
 
-## How to use it
+## How to Use it
 Basically you can copy the code in main.py to your project, some examples are below.
 
 
@@ -59,5 +57,8 @@ I'm not in any way affiliated with Dublin Bus whatsoever.
 
 
 ## Demo
-To see this script in action, check out http://www.dublinbus.co.nr
+To see this script in action, check out
+
+    http://www.dublinbus.co.nr
+
 :)
