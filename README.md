@@ -59,8 +59,4 @@ I'm not in any way affiliated with Dublin Bus whatsoever.
 
 
 ## Demo
-To see this script in action, check out
-
-    http://www.dublinbus.co.nr
-
-:)
+To see this script in action, check out http://www.dublinbus.co.nr
