@@ -17,10 +17,9 @@ Basically you can copy the code in main.py to your project, some examples are be
 
 
 ### Get resutlts in xml form from one bus stop
+#+begin_src python
 xml =  bus_rtpi_get_result(1385)
 print xml
-
-
 <RealTimeInformationResults>
     <StopNumber>1385</StopNumber>
     <StopAddress>South Circular Road, Griffith College</StopAddress>
@@ -38,7 +37,7 @@ print xml
         <Notes>A</Notes>
     </Bus>
 </RealTimeInformationResults>
-
+#+end_src
 
 ### Get results in html form from one bus stop
 table = bus_html_table(1385)
