@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from bs4 import BeautifulSoup
 import urllib2
+import datetime
 		
 def bus_rtpi_get_result(number):
     try:
@@ -199,3 +200,35 @@ def bus_order_html_table(rows, header=True, Notes=True):
         return "<table>\n"+head+results+"</table>"
     else:
         return "<table>\n"+results+"</table>"
+
+def bus_minimal_table(stop, buses=[]):
+    html = bus_rtpi_get_result(stop)
+    soup = BeautifulSoup(html, "html.parser")
+    routes = []
+    destinations = []
+    expectedtimes = []
+    notes = []
+    table = ""
+    for route in soup.findAll("route"):
+        routes.append(route.text)
+    for expectedtime in soup.findAll("expectedtime"):
+        expectedtimes.append(expectedtime.text)
+    for n in range(len(routes)):
+        if buses == [] or routes[n] in buses:
+            table += routes[n]+" @ "+expectedtimes[n]+"\n"
+    return table
+
+def bus_order_minimal_table(rows):
+    times = ["Due"]
+    for t in range(60*24):
+        minute = (t)%60
+        hour = (4 + (t - minute)/60)%24
+        minute = str(minute).zfill(2)
+        hour = str(hour).zfill(2)
+        times.append(str(hour)+":"+str(minute))
+    results = ""
+    for time in times:
+        for row in rows.split("\n"):
+            if time in row:
+                results += row+"\n"
+    return results
