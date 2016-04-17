@@ -215,7 +215,7 @@ def bus_minimal_table(stop, buses=[]):
         expectedtimes.append(expectedtime.text)
     for n in range(len(routes)):
         if buses == [] or routes[n] in buses:
-            table += routes[n]+" @ "+expectedtimes[n]+"\n"
+            table += routes[n]+"@"+expectedtimes[n]+"\n"
     return table
 
 def bus_order_minimal_table(rows):
@@ -231,4 +231,8 @@ def bus_order_minimal_table(rows):
         for row in rows.split("\n"):
             if time in row:
                 results += row+"\n"
-    return results
+    y = ""
+    for x in results[:160].split("\n"):
+        if len(y)+1+len(x) <= 160:
+            y += x+"\n"
+    return(y.rstrip("\n"))
